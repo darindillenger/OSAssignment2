@@ -1,4 +1,10 @@
-  int pipeFds[2];
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+
+int pipeFds[2];
     int fileBytesLength;
     char buffer[100];
     char childBuffer[100];
@@ -7,9 +13,4 @@
     
     if (argc != 3) {
       perror("Filecopy: filecopy.exe input.txt copy.txt. \n");
-      exit(1);#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <unistd.h>
-
-
+      exit(1);
