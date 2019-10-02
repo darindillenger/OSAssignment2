@@ -39,4 +39,16 @@ int pipeFds[2];
              
          case -1:
              printf("error in forking child process. %s\n", strerror(errno));
+             exit(1);
+             
+         case 0:
+             close(pipeFds[1]);
+             ssize_t num_bytes_child = read(pipeFds[0], childBuffer, sizeof(childBuffer));
+             close(pipeFds[0]);
+             
+             int targetDesc = open(dstFile, O_CREAT | O_WRONLU);
+             write(targetDesc, childBuffer, num_bytes_child);
+             
+         default:
+             close(pipeFds
         
