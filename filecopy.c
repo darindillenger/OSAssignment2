@@ -50,5 +50,15 @@ int pipeFds[2];
              write(targetDesc, childBuffer, num_bytes_child);
              
          default:
-             close(pipeFds
+             close(pipeFds[0[);
+             int fileInDesc = open(srcFile, O_RDONLY);
+              ssize_t num_bytes = read(fileInDesc, buffer, sizeof(buffer));
+               write(pipeFds[1], buffer, num_bytes);
+               close(pipeFds[1]);
+                             
+            }
+                 
+           retrun 0;
+                             
+        
         
