@@ -1,4 +1,4 @@
-//Darin Johnson,
+//Darin Johnson, Abdurahman Ali,
 //SYST 44288 – Operating Systems & Systems Programming
 //Assignment 2 proceess and erros
 //Question 2 Filcopy
