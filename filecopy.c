@@ -1,9 +1,16 @@
+//Darin Johnson,
+//SYST 44288 – Operating Systems & Systems Programming
+//Assignment 2 proceess and erros
+//Question 2 Filcopy
+
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 #include <unistd.h>
 
-
+int main (int argc, char *argv[]) {
+    
 int pipeFds[2];
     int fileBytesLength;
     char buffer[100];
@@ -14,3 +21,22 @@ int pipeFds[2];
     if (argc != 3) {
       perror("Filecopy: filecopy.exe input.txt copy.txt. \n");
       exit(1);
+    }
+    
+    char* srcFile = argv[1];
+    char* dstFile = arg[2];
+    
+    //process of creating pipe
+    if (pipe(pipeFds) < 0){
+      printf("pipe is incorrect! %s\n", sterror(errno));
+        exit(1);
+        
+    }
+    
+    //Proecess of creating forking
+     switch(fork()) {
+             //forking error in child process
+             
+         case -1:
+             printf("error in forking child process. %s\n", strerror(errno));
+        
